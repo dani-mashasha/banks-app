@@ -24,15 +24,20 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <script src="script.js"></script>
-    <title>React App</title>
+    <link rel="stylesheet" href="styles.css">
+        <title>Banks App</title>
   </head>
   <body>
-    <h1>Banks</h1>
-    <form>
-      <input type="text" name="bank" placeholder="bank name"/>
-      <button onclick=handleClick type="submit">click</button>
+    <div class="main">
+         <h1>Banks</h1>
+    <form id= "myForm">
+      <input type="text" id="search" name="bank" placeholder="Enter bank name..."/>
+      <div id="matchList"></div>
+      <button type="submit">click</button>
       </form>
+    </div>
+ 
+    <script src="main.js"></script>
 
   </body>
 </html>
