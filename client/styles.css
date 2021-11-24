@@ -1,5 +1,46 @@
+body{
+    margin: 0;
+    padding: 0;
+}
 .main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
+}
+
+#myForm{
+
+}
+#search{
+    padding: 10px;
+    border-radius: 10px;
+
+}
+button{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: cadetblue;
+} 
+
+#matchList{
+    background-color: rgb(56, 45, 45);
+    color: blanchedalmond;
+    position:absolute;
+    z-index: 2;
+    border-radius: 5px;
+
+
+    
+    
+
+}
+option{
+    padding: 5px;
+    border-bottom: 1px solid blanchedalmond;
+     border-radius: 5px;
+}
+option:hover{
+    background-color: crimson;
+    
 }
