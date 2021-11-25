@@ -1,8 +1,7 @@
 const myForm = document.getElementById("myForm") ;
 const search = document.getElementById("search");
-const button = document.getElementsByTagName("button")
- const matchList = document.getElementById("matchList");
-const select = document.createElement("select")
+const matchList = document.getElementById("matchList");
+const select = document.getElementById("branchList")
 
 const selectBranches=(data) =>{
     select.innerHTML="";
@@ -12,11 +11,10 @@ const selectBranches=(data) =>{
         op.value = branchNum;
         select.append(op)
     })
-    myForm.append(select)
 }
 
 const options =  async (e) => {
-    const {value} = e.target;
+    const {value} = e.target
     search.value = value;
     matchList.innerHTML="";
     await fetch(`http://localhost:3000/branches/${value}`)
@@ -47,7 +45,7 @@ myForm.addEventListener("submit",async (e) => {
     e.preventDefault()
     const bankName = search.value
     const branchCode = select.value
-    await fetch(`http://localhost:3000/bank/${bankName}/${branchCode}`)
+    await fetch(`http://localhost:3000/${bankName}/${branchCode}`)
     .then(response => response.json())
     .then(data => console.log( data));
 })

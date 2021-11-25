@@ -59,28 +59,24 @@ app.get("/", (req, res) => {
 app.get("/:characters", async (req, res)=>{
     const {characters} = req.params;
     const namesList = []
-    // const names = data.BRANCHES.BRANCH.filter(branch => branch.Bank_Name[0].includes(characters));
     data.BRANCHES.BRANCH.map(branch => branch.Bank_Name[0].includes(characters) && !namesList.includes(branch.Bank_Name[0])? namesList.push(branch.Bank_Name[0]): null);
     res.send(namesList)
 })
 
 app.get("/branches/:bankName(*)", async (req, res)=>{
     const branches= []
-    const {bankName} =  req.params;
+    const {bankName} =  req.params
     data.BRANCHES.BRANCH.map(branch=> branch.Bank_Name[0] === bankName? branches.push(branch.Branch_Code[0]): null)
     branches.sort(function(a, b){return a-b})
     res.send(branches)
 
 })
 
-app.get("bank/:Bank_Name(*)/:Branch_Code", async (req, res)=>{
+app.get("/:bankName(*)/:branchCode", async (req, res)=>{
     console.log(req.params)
-    const {bankName, branchCode} =  req.params;
+    const{ bankName,branchCode}=  req.params;
+    console.log(bankName, branchCode)
     const bank = data.BRANCHES.BRANCH.find(branch=> branch.Bank_Name[0] === bankName && branch.Branch_Code[0] === branchCode)
-    // const trr = bank.filter(st=> st === true);
-    // console.log(data.BRANCHES.BRANCH[0].Branch_Code )
-    // console.log(trr)
-
     res.send(bank)
 
 })
