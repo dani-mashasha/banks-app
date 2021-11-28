@@ -1,12 +1,27 @@
 body{
     margin: 0;
     padding: 0;
+    height: 90vh;
+    background: #abbaab;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
 }
 .main {
+    max-width: 70%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    background: #83a4d4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 #myForm{
@@ -15,18 +30,37 @@ body{
 #search{
     padding: 10px;
     border-radius: 10px;
+    border: none;
 
 }
 #branchList{
     padding: 10px;
+    border: none;
+    border-radius: 10px;
+
+
     
 }
 
 button{
     padding: 10px;
     border-radius: 10px;
-    background-color: cadetblue;
+    color:white;
+    background: #ff4b1f;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff9068, #ff4b1f);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff9068, #ff4b1f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+  
 } 
+button:hover{
+    color:black;
+
+    background: #abbaab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+  transition:all 2s;
+}
 
 #matchList{
     background-color: rgb(56, 45, 45);
@@ -47,12 +81,20 @@ option:hover{
 #bankDiv{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
     padding: 20px;
+    margin-top: 50px;
+    border-radius: 20px;color: white;
+    background: #2980b9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #2980b9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
 }
 #bankDiv h2{
     text-align: center;
 }
 #bankDiv p{
     text-align: right;
+    
 }

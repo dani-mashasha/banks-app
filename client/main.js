@@ -42,7 +42,7 @@ const searchBanks = async (e)=>{
     .then(data => auto( data));
 }
 
-const displyBank = (bank) =>{
+const displayBank = (bank) =>{
     console.log(bank)
     bankDiv.innerHTML = "";
 
@@ -51,13 +51,13 @@ const displyBank = (bank) =>{
 
 
     const p = document.createElement("p");
-    p.innerHTML = `מספר בנק: ${bank.Bank_Code[0]}<br>
-    כתובת : ${bank.Branch_Address[0]}, ${bank.City[0]} <br>
-    מיקוד: ${bank.Zip_Code[0]}<br>
-    טלפון: ${bank.Telephone[0]}<br>
-    פקס: ${!bank.Fax[0]?  "אין ":  bank.Fax[0]}<br>
-    גישה לנכים: ${bank.Handicap_Access[0]}<br>
-     ${bank.day_closed[0]? `הסניף סגור:${bank.day_closed[0]} ` : null }<br>`
+    p.innerHTML = `מספר בנק: ${bank.Bank_Code[0]}<br><br>
+    כתובת : ${bank.Branch_Address[0]}, ${bank.City[0]} <br><br>
+    מיקוד: ${bank.Zip_Code[0]}<br><br>
+    טלפון: ${bank.Telephone[0]}<br><br>
+    פקס: ${!bank.Fax[0]?  "אין ":  bank.Fax[0]}<br><br>
+    גישה לנכים: ${bank.Handicap_Access[0]}<br><br>
+     ${bank.day_closed[0]&& `הסניף סגור:${bank.day_closed[0]} ` }`
 
     bankDiv.append(h2, p)
 
@@ -70,7 +70,7 @@ myForm.addEventListener("submit",async (e) => {
     const branchCode = select.value
     await fetch(`http://localhost:3000/${bankName}/${branchCode}`)
     .then(response => response.json())
-    .then(data => displyBank( data));
+    .then(data => displayBank( data));
 })
 
 
