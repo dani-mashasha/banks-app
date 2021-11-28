@@ -34,11 +34,6 @@ button{
     position:absolute;
     z-index: 2;
     border-radius: 5px;
-
-
-    
-    
-
 }
 option{
     padding: 5px;
@@ -47,5 +42,17 @@ option{
 }
 option:hover{
     background-color: crimson;
-    
+}
+
+#bankDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+#bankDiv h2{
+    text-align: center;
+}
+#bankDiv p{
+    text-align: right;
 }
