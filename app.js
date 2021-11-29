@@ -22,11 +22,9 @@ const ParsXml = (xml) => {
             console.log('Err');
             console.log(err);
         } else {
-            console.log('Done');
+            console.log('DB is ready');
             data= JSON.stringify(result);
-            data= result;
-
-            
+            data= result;  
         }            
     });
 }
@@ -43,12 +41,8 @@ const ParsXml = (xml) => {
         xml += data
     })
     res.on("end", ()=>{
-        console.log("xml ok")
-        ParsXml(xml)
-        
+        ParsXml(xml)  
     })
-
-
 })
 }
 
@@ -73,12 +67,9 @@ app.get("/branches/:bankName(*)", async (req, res)=>{
 })
 
 app.get("/:bankName(*)/:branchCode", async (req, res)=>{
-    console.log(req.params)
     const{ bankName,branchCode}=  req.params;
-    console.log(bankName, branchCode)
     const bank = data.BRANCHES.BRANCH.find(branch=> branch.Bank_Name[0] === bankName && branch.Branch_Code[0] === branchCode)
     res.send(bank)
-
 })
 
 

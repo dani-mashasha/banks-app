@@ -1,8 +1,10 @@
+const display = document.getElementById("display") ;
 const myForm = document.getElementById("myForm") ;
+
 const search = document.getElementById("search");
 const matchList = document.getElementById("matchList");
 const select = document.getElementById("branchList")
-const bankDiv = document.getElementById("bankDiv");
+// const bankDiv = document.getElementById("bankDiv");
 
 const selectBranches=(data) =>{
     select.innerHTML="";
@@ -44,7 +46,9 @@ const searchBanks = async (e)=>{
 
 const displayBank = (bank) =>{
     console.log(bank)
-    bankDiv.innerHTML = "";
+    display.innerHTML="";
+    const bankDiv = document.createElement("div");
+    bankDiv.setAttribute("id", "bankDiv");
 
     const h2 = document.createElement("h2");
     h2.innerHTML = `${bank.Bank_Name[0]} - ${bank.Branch_Name[0]}` 
@@ -59,7 +63,9 @@ const displayBank = (bank) =>{
     גישה לנכים: ${bank.Handicap_Access[0]}<br><br>
      ${bank.day_closed[0]&& `הסניף סגור:${bank.day_closed[0]} ` }`
 
-    bankDiv.append(h2, p)
+    bankDiv.append(h2, p);
+    display.append(bankDiv)
+
 
 
 }
